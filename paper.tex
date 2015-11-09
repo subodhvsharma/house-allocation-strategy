@@ -1,0 +1,72 @@
+\documentclass[a4paper,10pt]{article}
+%\usepackage[utf8x]{inputenc}
+
+%opening
+
+\begin{document}
+\title {A Dynamic Algorithm to Accelerate House Allocation Strategy at IITD}
+\author {Subodh Sharma \and Rahul Garg}
+\maketitle
+
+\begin{abstract}
+Housing allocation in IIT Delhi is a woefully slow procedure. In this
+article, we present an algorithm which will potentially speed up the
+allocation procedure without requiring changes to the rules of allocation
+by the Institute. We additionally demonstrate that our algorithm is
+{\em fair} and {\em stable} (i.e., every allottee gets a unit that is
+scored more than his/her current allotment) in its allocation.
+\end{abstract}
+
+\section{Introduction}
+Housing allocation procedure at IIT Delhi suffers from the ills
+resulting from the combination of sequential processing and
+non-automation.  This often results in inordinate delays in the
+notification of new available units for accommodation. Most notably,
+those faculty members who are yet to be allocated faculty housing are
+the worst sufferers of these systemic delays. 
+%
+
+Briefly, the current housing allocation procedure crawls in the
+following manner: (i) assuming a unit is empty, the staff of the
+estate office first performs a fitness check of the unit; this may
+take anywhere from 2 to 4 weeks of time (depending on the workload on the 
+estate office), (ii) subsequently, the estate
+office issues a notification to faculty members indicating that the
+house is up for grabs and is accepting applications from the faculty
+members indicating their expression of interest (EoI) in the unit; the
+deadline is typically set 2 weeks from the date of issue of the
+notification, (iii) after which the allotment to a faculty who is
+highest in {\em seniority} takes place (the rules of assigning
+seniority are fixed and provided by the Institute), (iv) the mandatory 
+basic cleaning and whitewash is performed by the estate office, 
+which typically takes 4-8 weeks and (v) finally the allottee moves
+with 1-2 weeks of the cleaning and the white-wash. The total time from 
+notification to the movement of the allottee can take anywhere from 10-15 weeks. 
+
+%
+In particular, the problem for new faculty members exacerbates when
+senior faculty members who have already been allotted units also
+compete for the new unit.
+%
+In addition to the above problem, the afore-mentioned process of
+allotment is severely sequential and we believe that there is
+parallelism that can be exploited similar to instruction-level
+parallelism in computer processors. Notice that after step (iii) the
+procedure of allotment of the unit that is to be vacated soon by the
+allottee can be initiated.
+
+
+
+
+
+\begin{thebibliography}{9}
+\bibitem{stable-marriage-problem}
+D. GALE and S. SHAPLEY, 
+College Admissions and the Stability of Marriage. 
+
+\end{thebibliography}
+
+
+
+
+\end{document}
