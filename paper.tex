@@ -56,6 +56,54 @@ procedure of allotment of the unit, which is to be vacated soon by the
 allottee, can be initiated.
 
 
+\section{Strategy Details}
+Right now in quite amorphous shape;
+
+\begin{itemize}
+\item Immediately after the issue of the notice of "available" units: 
+  start with the first deadline (d1 -- 2 weeks) to register 
+  two sets of people -- one who have shown EOI (expression of
+  interest)  +  who want to be informed
+  only (IO).
+  \begin{enumerate}
+  \item At the time of registering people, get their preferences (in the
+    form of scores) on the units as well. [Are we going to put a
+      deadline after which we stop taking scores on the available units]
+  \item People who are in the EoI set, their units are added to the pool of 
+    "potentially available" units.
+  \item People from the IO set are allowed to move freely to 
+    EoI (and back??) to IO or to remove themselves from the game altogether (??).
+  \end{enumerate}
+\item Right when the d1 expires, use the stable-marriage algorithm to assign 
+  the "available" units to the senior-most eligible candidates from the 
+  EoI list.
+  \begin{enumerate}
+  \item At this point, the units of the allottees are lifted up from the
+    set of "potentially available" units to the set of "available"
+    units.
+  \item Again, with new available units, its possible that the
+    following movements of candidates happen: IO --> EoI, EoI --> IO
+    or EoI/IO --> END (meaning no more interested to play the game
+    anymore)
+  \item In case an EoI elects to opt END, then his unit is removed
+    from the set of "potentially available" units.
+  \item The preference-based scores that people had provided for such
+    units which are no more in the pool automatically becomes "void".
+  \end{enumerate}
+\item The next deadline is set smaller than d1. The amount of reduction 
+  is decided   later.
+  NOTE: once the houses are given weights by EOIs, the
+  weights should not be allowed to change.  
+\item  The preferences are provided right at the time when people register 
+as EoI or for information only.  
+\item  Exponentially smaller deadlines to reach convergence for EoIs
+\item People are not allowed to change the preferences of the units once
+entered. For this very reason we provide floating-point
+preference-based scoring.
+\item Once a unit is allotted to an EoI, his/her current unit is immediately
+added to the pool of available units. An email is sent to all the people 
+in the sets EoI + IO
+\end{itemize}
 
 
 
